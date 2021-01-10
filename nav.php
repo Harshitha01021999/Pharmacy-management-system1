@@ -1,32 +1,39 @@
-<nav class="navbar navbar-expand-lg navbar-dark" style="background: black;">
-  <a class="navbar-brand" href="#">Trailblazer</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<?php session_start(); ?>
+<nav class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(to right, purple, red); height: 70px;">
+  <a class="navbar-brand m-0 m-lg-0" href="#"><img src="../images/logo.png" width="150px" style="margin-top: -10px; margin-left: -10px;"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item active" id="add">
+        <a class="nav-link" href="index.php">Shop Items <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Places to visit
+        <a class="nav-link dropdown-toggle" id="cat" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Category
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Basavangudi</a>
-          <a class="dropdown-item" href="#">Jayanagar</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="allopathy.php">Allopathic</a>
+          <a class="dropdown-item" href="ayurvedic.php">Ayurvedic</a>
+          <a class="dropdown-item" href="homeopathy.php">Homeopathy</a>
+          <a class="dropdown-item" href="dailycare.php">Daily Care</a>
+          <a class="dropdown-item" href="babycare.php">Baby Care</a>
         </div>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Transportation</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+      <li class="nav-item" id="edit">
+        <a class="nav-link" href="editprofile.php">Edit Profile</a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <button class="btn btn-primary my-2 my-sm-0" type="submit">LOGIN</button>
-    </form>
   </div>
+      <form class="form-inline my-2 my-lg-0">
+          <li class="nav-item dropdown">
+          <button class="btn btn-dark dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <?php echo $_SESSION['username']; ?>
+          </button>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="../login.php">Logout</a>
+          </div>
+        </li>
+      </form>
 </nav>
